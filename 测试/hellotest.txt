@@ -1,2 +1,0 @@
-print("Hello World");
-玩心爱谁挂号费
