@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class=" scrollbar-type-1 sb-cyan">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Metro 4 -->
+    <link rel="stylesheet" href="static/vendors/metro4/css/metro-all.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <title>豆瓣TOP250词频统计</title>
+
+</head>
+<body class="m4-cloak h-vh-100">
+<div data-role="navview" data-toggle="#paneToggle" data-expand="xl" data-compact="lg" data-active-state="true">
+    <div class="navview-pane">
+        <div class="bg-cyan d-flex flex-align-center">
+            <button class="pull-button m-0 bg-darkCyan-hover">
+                <span class="mif-menu fg-white"></span>
+            </button>
+            <h2 class="text-light m-0 fg-white pl-7" style="line-height: 52px">这不是爬虫</h2>
+        </div>
+
+        <div class="suggest-box">
+            <div class="data-box">
+                <img src="static/images/qiyu.jpg" class="avatar">
+                <div class="ml-4 avatar-title flex-column">
+                    <a href="#" class="d-block fg-white text-medium no-decor"><span class="reduce-1">Braindance</span></a>
+                    <p class="m-0"><span class="fg-green mr-2">&#x25cf;</span><span class="text-small">在线</span></p>
+                </div>
+            </div>
+            <img src="static/images/qiyu.jpg" class="avatar holder ml-2">
+        </div>
+
+        <div class="suggest-box">
+            <button class="holder">
+                <span class="mif-search fg-white"></span>
+            </button>
+        </div>
+
+        <ul class="navview-menu mt-4" id="side-menu">
+            <li class="item-header">网站导航</li>
+            <li>
+                <a href="/index">
+                    <span class="icon"><span class="mif-home fg-violet"></span></span>
+                    <span class="caption">主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/movie">
+                    <span class="icon"><span class="mif-eye fg-blue"></span></span>
+                    <span class="caption">电影</span>
+                </a>
+            </li>
+            <li>
+                <a href="/score">
+                    <span class="icon"><span class="mif-chart-pie fg-green"></span></span>
+                    <span class="caption">评分</span>
+                </a>
+            </li>
+            <li>
+                <a href="/word">
+                    <span class="icon"><span class="mif-cloud fg-yellow"></span></span>
+                    <span class="caption">词云</span>
+                </a>
+            </li>
+            <li>
+                <a href="/group">
+                    <span class="icon"><span class="mif-heart fg-orange"></span></span>
+                    <span class="caption">团队</span>
+                </a>
+            </li>
+            
+
+            <li class="item-header">文档</li>
+            <li>
+                <a href="https://metroui.org.ua/intro.html">
+                    <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
+                    <span class="caption">Metro 4</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="w-100 text-center text-small data-box p-2 border-top bd-grayMouse" style="position: absolute; bottom: 0">
+            <div>&copy; 2019 <a href="mailto:sergey@pimenov.com.ua" class="text-muted fg-white-hover no-decor">Sergey Pimenov</a></div>
+            <div>Created with <a href="https://metroui.org.ua" class="text-muted fg-white-hover no-decor">Metro 4</a></div>
+        </div>
+    </div>
+
+    <div class="navview-content h-100">
+        <div data-role="appbar" class="pos-absolute bg-darkCyan fg-white">
+
+            <a href="#" class="app-bar-item d-block d-none-lg" id="paneToggle"><span class="mif-menu"></span></a>
+
+            <div class="app-bar-container ml-auto">
+                <div class="app-bar-container">
+                    <a href="#" class="app-bar-item">
+                        <img src="static/images/qiyu.jpg" class="avatar">
+                        <span class="ml-2 app-bar-name">Braindance</span>
+                    </a>
+                    <div class="user-block shadow-1" data-role="collapse" data-collapsed="true">
+                        <div class="bg-darkCyan fg-white p-2 text-center">
+                            <img src="static/images/qiyu.jpg" class="avatar">
+                            <div class="h4 mb-0">Braindance</div>
+                            <div>兴趣使然</div>
+                        </div>
+                        <div class="bg-white d-flex flex-justify-between flex-equal-items p-2">
+                            <button class="button flat-button">粉丝</button>
+                            <button class="button flat-button">关注</button>
+                            <button class="button flat-button">好友</button>
+                        </div>
+                        <div class="bg-white d-flex flex-justify-between flex-equal-items p-2 bg-light">
+                            <button class="button mr-1">个人信息</button>
+                            <button class="button ml-1">退出登录</button>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="app-bar-item">
+                    <span class="mif-cogs"></span>
+                </a>
+            </div>
+        </div>
+        <!-- 页面位置 -->
+        <div id="content-wrapper" class="content-inner h-100" style="overflow-y: auto">
+            <div class="bg-white p-4">
+                <h5 class="mt-0 text-bold">豆瓣TOP250词频统计</h5>
+                <div data-role="splitter" data-split-sizes="70, 30" style="height: 400px;" class="border bd-default splitter" data-role-splitter="true">
+                    <div class="d-flex flex-justify-center flex-align-center split-block" style="flex-basis: calc(40% - 4px);">
+                        <div class="img-container">
+                            <img src="/static/images/infoword.png" style="width: 100%;height: 100%">
+                        </div>
+                    </div>
+                    <div class="gutter" style="width: 4px;"></div>
+                    <div class="d-flex flex-justify-center flex-align-center split-block" style="flex-basis: calc(60% - 4px);">
+                        <p class='indent-letter text-bold'>A painting is more than the sum of its parts. A cow by itself is just a cow. A meadow by itself is just grass, flowers. And the sun peeking through the trees is just a beam of light. But you put them all together and it can be magic.<br>
+一幅画不是众多物件简单拼凑而成的。牛只是一头牛，草地也只有青草和鲜花，而穿过树枝的阳光也仅仅只是一束光，但如果将它们放到一起，就会产生魔一般的魅力。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-4">
+                <div data-role="splitter" data-split-sizes="70, 30" style="height: 400px;" class="border bd-default splitter" data-role-splitter="true">
+                    <div class="d-flex flex-justify-center flex-align-center split-block" style="flex-basis: calc(40% - 4px);">
+                        <div class="img-container">
+                            <img src="/static/images/dir_infoword.png" style="width: 100%;height: 100%">
+                        </div>
+                    </div>
+                    <div class="gutter" style="width: 4px;"></div>
+                    <div class="d-flex flex-justify-center flex-align-center split-block" style="flex-basis: calc(60% - 4px);">
+                        <p class='indent-letter text-bold'>让我怦然心动的那句话
+“其实，阴影和阳光一样，都是人生的财富。”整个漫长的冬日，几乎没有阳光眷顾我早上等车的地方，十字街口，永夜般氤氲着清晨的空气。世界础静如初，所有的所有在地面投下几道斑驳的影子。
+无意中低头，发现“世界”就在这里……
+萧瑟的风把一张旧报纸吹到脚下，瞥去，头版报道的标题吸引了我：“其实，阴影和阳光一样，都是人生的财富。”刹那间，心被重重一击，周身的血液流入心房，我一边呼吸，一边让它们获得灼热的温度。风依旧冷冷地吹，只有那满腔沸腾的血液在心间奔涌……
+人生，其实可以这样。
+人生，竟然可以这样!
+那是电线杆的影子。它们仿佛清晰的五线谱，只是调子已被那年久失修的铁架子分割成几个小节。我多想为它们谱上曲，奏响轰轰烈烈的春日乐章。多希望，动情地演唱着这歌曲的，是南归的候鸟。树木、楼房、商铺、立交桥……它们的影子渐渐扭曲、倾斜，大半部分浸在寒冬的空气中，渐渐蒸发，小半部分随着车辆的疾驰，被远远甩在身后。那是灌木丛吗?它们的影子竟分外浓重，呈现出不同于往日的茂盛。它们每一簇都在奋力地拔节、生长，一切都为了日后的挺秀、吐香，一切都为了那一季的纷纷扬扬。于是，我小心地把手掌握成涂鸦的太阳，覆盖在它们的影子上，给它们假想的光明。我随口吐出的一小片哈气，竟成了冬日里轻盈的云朵，为它们带去久违的浪漫……</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- jQuery first, then Metro UI JS -->
+<script src="static/vendors/jquery/jquery-3.4.1.min.js"></script>
+<script src="static/vendors/chartjs/Chart.bundle.min.js"></script>
+<script src="static/vendors/qrcode/qrcode.min.js"></script>
+<script src="static/vendors/jsbarcode/JsBarcode.all.min.js"></script>
+<script src="static/vendors/ckeditor/ckeditor.js"></script>
+<script src="static/vendors/metro4/js/metro.min.js"></script>
+<script src="static/js/index.js"></script>
+</body>
+</html>
