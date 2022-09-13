@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <title>随机选吃什么 - 中午吃什么</title>
+
+
+    
+    <link rel="stylesheet" href="static/customer.css"></link>
+    <script src="static/global.js"></script>
+    <script src="static/jquery.min.js"></script>
+    <link rel="shortcut icon" href="static/logo.png" />
+    <link rel="stylesheet" href="static/metro-icons.min.css">
+    <link rel="stylesheet" href="static/metro-all.min.css">
+</head>
+
+<body>
+    <div class="container pos-fixed pos-center text-center ">
+        <div id="wrapper" class="row">
+            <h1 class="cell"><span>随机选吃什么吃</span><b id="what">什么</b><span>？</span></h1>
+        </div>
+
+        <div class="row flex-justify-center mt-10 mb-20">
+            <div class="cell-3">
+                <input class="button shadowed light large" type="button" value="加载中..." id="start" disabled />
+            </div>
+        </div>
+
+        <div class="row flex-justify-center">
+            <div id="popbox-wrapper" hidden>
+                <div id="popbox"  class="dialog text-center" data-role="dialog">
+                    <div class="dialog-title"><h3>~ 菜单 ~</h3></div>
+                    <div class="dialog-content">
+                        <textarea type="hidden" id="list" data-role="textarea" class="dialog-content"
+                        placeholder="在这里输入菜单，项目间以空格分隔..."> 炒菜 炸串 炸鸡 盖浇饭 粥 麻辣烫 麻辣香锅 黄焖鸡 老堤北米线 鸭腿饭</textarea>
+                    </div>
+                    <div class="dialog-actions">
+                        <input type="button" value="确定" class="btn btn-primary js-dialog-close" id="ok"/>
+                    </div>
+                </div>
+            </div>
+            <button class="button secondary shadowed" id="cfgmenu">
+            <span class="mif-cart" title="编辑菜单"> 临时菜单 </span> 
+            <span class="badge" id="menu_number"></span> 
+            </button>
+        </div>
+    </div>
+    <script src="static/metro.min.js"></script>
+    <script src="static/customer.js"></script>
+    <script src="static/script.js"></script>
+</body>
+
+</html>
